@@ -12,7 +12,7 @@
 
 ***************************************************************************************/
 
- import { AppPage } from './app.po';
+import { AppPage } from './app.po';
 import { browser } from 'protractor';
 
  describe('workspace-project App', () => {
@@ -36,12 +36,12 @@ import { browser } from 'protractor';
   it('should display the username',()=>{
     page.navigateTo();
     expect(page.getUsername());
-    browser.sleep(1000);
+    browser.sleep(2000);
   })
   
   it('should display password',()=>{ 
     expect(page.getPassword());
-    browser.sleep(1000);
+    browser.sleep(2000);
   })
 
   it('should click on Login button and should navigate to Inlogistics Homepage',()=>{
@@ -52,21 +52,55 @@ import { browser } from 'protractor';
   it('should click on first order present in the table',()=>{
    // expect(page.tickCheckbox());
     expect(page.orderId());
-    browser.sleep(1000);
+    browser.sleep(2000);
   })
 
-  it('should click on Confirm button',()=>{
+  it('should click on "Edit Order" button and update order',()=>{
+    expect(page.clickEditOrder());
+    browser.sleep(2000);
+    expect(page.editDate());
+    browser.sleep(2000);
+    expect(page.clickDate());
+    browser.sleep(2000);
+    expect(page.clickOk());
+    browser.sleep(2000);
+    expect(page.clickSave());
+    browser.sleep(2000);
+    expect(page.clickOnYes());
+    browser.sleep(2000);
+  })
+
+  it('should click on Confirm button in order page',()=>{
+    browser.sleep(2000);
     expect(page.clickConfirm());
-    browser.sleep(1000);
+    browser.sleep(2000);
+    // expect(page.clickYes());
+    // browser.sleep(2000);
   })
   
   it('should confirm the order by cliking on "Yes"',()=>{
-       expect(page.clickYes());
-      browser.sleep(500);
+    browser.sleep(2000);
+    expect(page.clickYes());
+    browser.sleep(2000);
    })
 
-   it('should click on Confirm button',()=>{
-     expect(page.clickConfirmButton());
-     browser.sleep(1000);
+  //  it('should click on Confirm button',()=>{
+  //    expect(page.clickConfirmBtn());
+  //    browser.sleep(2000);
+  //  })
+
+   it('should click on confirm order id in Confirmed page',()=>{
+    expect(page.confirmOrderId());
+    browser.sleep(2000);
    })
+
+   it('should click on confirm order and allocate the Vehicle',()=>{
+      expect(page.clickOnContainerNo());
+      browser.sleep(2000);
+  });
+  //    expect(page.clickOnDriverNo());
+  //    browser.sleep(2000);
+  //    expect(page.clickOnAllotVehicle());
+  //    browser.sleep(2000);
+  //  })
 });

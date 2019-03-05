@@ -1,3 +1,19 @@
+
+/**************************************************************************************
+
+ @Purpose : Page Object file used as a supplimentory information that contains 
+            functions that are required for Spec.ts file
+
+ @Author  : Sheetal Chaudhari
+
+ @version : protractor 5.4.0 
+
+ @Date    : 04/01/2019
+
+***************************************************************************************/
+
+
+
 import { browser, by, element } from 'protractor';
 
 export class AppPage {
@@ -27,10 +43,34 @@ export class AppPage {
   clickLogin(){
     return element(by.buttonText('Login')).click();
   }
- 
-  // tickCheckbox(){
-  //   return element(by.name('5c74e69f70918d3f9a81acda')).click();
-  // }
+
+  orderId(){
+    return element(by.xpath("//*[contains(text(),'INJ')]")).click();
+  }
+
+  clickEditOrder(){
+    return element(by.buttonText('Edit Order')).click();
+  }
+
+  editDate(){
+    return element(by.className("edit-order-input")).click();
+  }
+
+  clickDate(){
+    return element(by.buttonText('9')).click();
+  }
+
+  clickOk(){
+    return element(by.buttonText('OK')).click();
+  }
+
+  clickSave(){
+    return element(by.buttonText('Save')).click();
+  }
+
+  clickOnYes(){
+    return element(by.buttonText('Yes')).click();
+  }
 
   clickConfirm(){
     return element(by.buttonText('Confirm Order')).click();
@@ -40,12 +80,27 @@ export class AppPage {
     return element(by.buttonText('Yes')).click();
   }
 
-  orderId(){
-    return element(by.xpath("//*[contains(text(), 'INJ')]")).click();
-  }
-
-  clickConfirmButton(){
-    return element(by.buttonText('Confirmed')).click();
+  // clickConfirmBtn(){
+  //   return element(by.buttonText('Confirmed')).click();
+  // }
+  
+  confirmOrderId(){
+    return element(by.xpath("//*[contains(text(),'INJ')]")).click();
   }
   
+  clickOnVehicleNo(){
+    return element(by.xpath("/html/body/div[2]/div[2]/div/div/div[2]/div[5]/div[2]/form/div[1]/div/input")).sendKeys('MH 01 ABC	');
+  }
+
+  clickOnContainerNo(){
+    return element(by.xpath('/html/body/div[2]/div[2]/div/div/div[2]/div[5]/div[2]/form/div[2]/div/input')).sendKeys('qwerty');
+  }
+   
+  clickOnDriverNo(){
+    return element(by.xpath('/html/body/div[2]/div[2]/div/div/div[2]/div[5]/div[2]/form/div[3]/div/input')).sendKeys('7008533651');
+  }
+
+  clickOnAllotVehicle(){
+    return element(by.buttonText('ALLOT VEHICLE')).click();
+  }
 }
